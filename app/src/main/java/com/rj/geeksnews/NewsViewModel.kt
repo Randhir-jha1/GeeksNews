@@ -16,6 +16,7 @@ class NewsViewModel:ViewModel() {
 
 
     fun getArticles(category:String,date:String,sortBy:String)=
+
         viewModelScope.launch (Dispatchers.IO){
             mRepository.getArticles(category,date,sortBy)
         }

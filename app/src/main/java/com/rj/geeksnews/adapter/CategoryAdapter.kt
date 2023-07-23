@@ -32,7 +32,7 @@ class CategoryAdapter(private val mListener:CategoryClickListener,val categoryLi
                    if (lastSelectedItem!=-1){
                        categoryList.get(lastSelectedItem).isSelected=false
                    }
-                   categoryList.get(lastSelectedItem).isSelected=true
+                   categoryList.get(holder.adapterPosition).isSelected=true
 
                    setCategoryView(lastSelectedItem,holder.adapterPosition)
                    mListener.let {

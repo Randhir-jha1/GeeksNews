@@ -7,7 +7,7 @@ data class NewsResponse(
     var author: String?,
     var title: String?,
     var url: String?,
-    var imgUrl: String?
+    var urlToImage: String?
 )
 
 

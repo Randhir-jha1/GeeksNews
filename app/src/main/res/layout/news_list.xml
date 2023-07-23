@@ -39,6 +39,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:id="@+id/tvNewsTitle"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-black"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:layout_margin="12dp"
                 app:layout_constraintBottom_toBottomOf="@+id/ivNews"
                 app:layout_constraintEnd_toEndOf="@+id/ivNews"
                 app:layout_constraintStart_toStartOf="@+id/ivNews" />

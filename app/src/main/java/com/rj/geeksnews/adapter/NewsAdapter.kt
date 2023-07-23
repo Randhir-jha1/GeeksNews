@@ -2,6 +2,7 @@ package com.rj.geeksnews.adapter
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,13 +31,22 @@ class NewsAdapter(context: Context):RecyclerView.Adapter<NewsAdapter.NewsViewHol
     override fun getItemCount(): Int {
         return list.size
     }
+
+    fun addItems(list:ArrayList<NewsResponse>){
+        if(list!=null && list.size>0){
+            this.list.clear()
+            this.list.addAll(list)
+            notifyDataSetChanged()
+        }
+    }
     inner class NewsViewHolder(var mBinding:NewsListBinding):RecyclerView.ViewHolder(mBinding.root){
         fun setData(item:NewsResponse){
             item.title.let{
                 mBinding.tvNewsTitle.text = it
             }
 
-            item.imgUrl.let {
+            Log.i("OKKKKKKKK",item.urlToImage.toString())
+            item.urlToImage.let {
                 mBinding.pbImage.visibility = View.VISIBLE
                 Glide.with(mBinding.ivNews.context)
                     .load(it)
